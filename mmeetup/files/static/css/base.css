@@ -1,0 +1,260 @@
+/* common */
+html, body {
+    font-family: Georgia, serif;
+    background: #FFF;
+    height: 100%;
+}
+.wr {
+    clear: both;
+    margin: 2em 0 0 0;
+}
+.kot {
+    float: right;
+    width: 350px;
+    clear: both;
+    position: relative;;
+}
+    .kot .text {
+        position: absolute;
+        font-family: Consolas, "Courier New", monospace;
+        font-size: 12px;
+        top: 20px;
+        left: 30px;
+        width: 130px;
+    }
+p {
+    margin: 1em 0 0 0;
+}
+ol {
+    list-style-type: decimal;
+}
+ul.dashed {
+    list-style-type: none;
+}
+ul.dashed > li:before, dl.dashed dd:before {
+    content: '\2014\a0';
+}
+.ie7 ul.dashed li, .ie7 dl.dashed dd {
+    behavior: expression((this.before) ? '' : (this.before = true)
+        & (eDash = document.createElement('<span/>'))
+        & (eDash.innerHTML = '&mdash;&nbsp;')
+        & (this.insertBefore(eDash, this.firstChild)));
+}
+/* header */
+.header {
+    overflow: hidden;
+}
+.header h1 {
+    font-size: 50px;
+    margin: 20px 0 0 30px;
+    xcolor: #c1bfc4;
+    xtext-shadow: #DDD 1px 1px;
+}
+.header h1 a {
+    text-decoration: none;
+    color: #000;
+}
+.header h1 .tagline {
+    font-size: 0.5em;
+    display: block;
+    text-shadow: none;
+    color: #000;
+}
+
+.header .info {
+    float: right;
+    line-height: 190%;
+    margin: 30px;
+    width: 15em;
+}
+
+.header .info .date {
+    font-size: 1.5em;
+}
+
+.header .main_menu {
+    display: block;
+    background: #FFAB48;
+    overflow: hidden;
+    width: 100%;
+}
+
+.header .main_menu li a {
+    float: left;
+    width: 13em;
+    text-align: center;
+    padding: 0.5em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+}
+
+.header .main_menu li a:hover, .header .main_menu li.active a {
+    background: #FFE7AD;
+    color: #000;
+}
+
+
+h2 {
+    font-size: 1.5em;
+    margin: 0 0 1em 0;
+}
+h3 {
+    font-size: 1.3em;
+    margin: 1.5em 0 0.7em 0;
+    font-family: Arial, sans-serif;
+}
+.contacts, .organizers {
+    float: right;
+    clear: both;
+    margin: 1em 30px 1em 0;
+    padding: 0 0 0 10px;
+    width: 15em;
+}
+    .contacts h2, .organizers h2 {
+        margin: 0 0 0.6em -10px;
+        font-size: 1.3em;
+        font-weight: bold;
+    }
+    .organizers h2 {
+        margin-bottom: 1em;
+    }
+    .organizers img {
+        margin: 0.3em 0 0.5em 0;
+    }
+
+.contacts span {
+    display: block;
+    margin: 0 0 0.3em 0;
+}
+/* main page */
+.button.big {
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 26px;
+  padding-top: 10px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-left: 40px;
+  text-decoration: none;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -webkit-box-shadow: 0px 1px 3px #666666;
+  -moz-box-shadow: 0px 1px 3px #666666;
+  text-shadow: 1px 1px 3px #666666;
+  border: solid #359e0b 1px;
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#32ad67), to(#4afa05));
+  background: -moz-linear-gradient(top, #32ad67, #4afa05);
+  -ms-filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#32ad67, endColorStr=#4afa05);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr=#32ad67, endColorStr=#4afa05);
+  display:inline-block; /* IE is so silly */
+  cursor: pointer;
+}
+.button.big:hover {
+  background: #359e0b;
+}
+
+.content {
+    margin: 0 20em 0 30px;
+    position: relative;
+}
+
+/* agenda */
+.agenda {
+    font-size: 0.9em;
+}
+    .agenda tr {
+    }
+    .agenda td {
+        padding: 0.2em 1em;
+        border: transparent 1px solid;
+        border-width: 5px 0;
+    }
+    .agenda .extra {
+        display: none;
+        text-align: left;
+        margin: 0.5em 1em 0.5em;
+    }
+    .agenda .brake {
+        background: #A7C9AE;
+        color: #000;
+     }
+        .agenda .brake .title {
+            text-align: center;
+        }
+    .agenda .speaker .photo {
+        vertical-align: middle;
+        margin: 0 0.7em 0 0;
+        float: left;
+    }
+    .agenda .speaker .name_and_company {
+        float: left;
+        margin: 0.3em 0 0 0;
+    }
+    .agenda .speaker .company {
+        display: block;
+        color: #3A3A3B;
+        font-style: italic;
+        font-size: 0.8em;
+        margin: 0.4em 0 0;
+    }
+.main .wr {
+    margin-top: 3em;
+}
+.main .organizers {
+    margin-top: 0;
+}
+.main .register_wr {
+    margin: 2.5em 0 0 0;
+    text-align: center;
+}
+.main .register {
+    display: block;
+    background: #FFAB48;
+    width: 15em;
+    text-align: center;
+    padding: 0.7em 0;
+    margin: 0 auto;
+    color: #FFF;
+    font-family: Arial, sans-serif;
+    text-decoration:none;
+}
+
+.main .register:hover {
+    background: #FFE7AD;
+    color: #000;
+}
+
+.social {
+    overflow: hidden;
+    margin: 1em auto 1em auto;
+    width: 15em;
+}
+    .social .facebook, .social .vkontakte, .social .twitter {
+        float: left;
+    }
+
+.partners {
+    margin: 2em 0 0 30px;
+}
+    .partners li {
+        padding: 0.5em 0 1em 0;
+        float: left;
+        height: 80px;
+        margin: 0 2em;
+        text-align: center;
+    }
+        .partners li img {
+            
+        }
+
+.register .content .register_form{
+    width: 500px;
+    margin: 0 auto;
+}
+
+/* accomodation */
+.accommodation .price {
+    xfont-size: 1.3em;
+    font-weight: bold;
+}

@@ -1,0 +1,6 @@
+{% for item in menu %}
+  <li class="{% if item.selected %}active{% endif %}{% if forloop.first %} first{% endif %}{% if forloop.last %} last{% endif %}">
+    <a href="{{ item.menu_item.url }}">{{ item.caption }}</a>
+  </li>
+{% endfor %}
+

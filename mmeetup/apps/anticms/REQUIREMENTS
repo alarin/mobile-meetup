@@ -1,0 +1,5 @@
+#django_dbtemplates>=1.0.1
+https://github.com/speijnik/django-dbtemplates/tarball/develop
+django_reversion>=1.4
+django_treemenus>=0.8.7
+django_mptt>=0.4.2

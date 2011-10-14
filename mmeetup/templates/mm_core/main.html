@@ -1,0 +1,106 @@
+{% extends 'site_base.html' %}
+{% load media %}
+{% load conference %}
+{% load email %}
+{% load thumbnail %}
+
+{% block extrahead %}
+    <script type="text/javascript" src="http://userapi.com/js/api/openapi.js?34"></script>
+{% endblock %}
+
+{% block bodyclass %}main{% endblock %}
+
+{% block content %}
+<div class="main_column">
+{% get_agenda %}
+<div class="agenda">
+    <table>
+    {% for lecture in lectures %}
+        <tr class="{% if lecture.is_brake%}brake{% endif %}">
+        <td class="time">{{ lecture.start|date:'H:i' }}</td>
+        {% if lecture.is_brake %}
+        <td colspan="3" class="title">{{ lecture.title|safe }}
+        {% if lecture.description %}
+        <div class="extra">
+            {{ lecture.description|safe }}
+        </div>
+        {% endif %}
+        </td>
+        {% else %}
+        <td class="title">{{ lecture.title|safe }}
+        {% if lecture.description %}
+        <div class="extra">
+            {{ lecture.description|safe }}
+        </div>
+        {% endif %}
+        </td>
+        <td class="speaker">
+        {% if lecture.speaker %}
+        <div class="photo">
+        {% thumbnail lecture.speaker.photo '50x50' crop='center center' as var %}
+        <img src="{{ var.url }}">
+        {% endthumbnail %}
+        </div>
+        <div class="name_and_company">
+        <span class="name">{{ lecture.speaker.first_name }} {{ lecture.speaker.last_name }}</span>
+        <span class="company">{{ lecture.speaker.company }}</span>
+        </div>
+        {% endif %}
+        </td>
+        {% endif %}
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+<div class="register_wr">
+<a class="register" href="/register">Я пойду!</a>
+</div>
+
+<div class="social">
+    <div class="twitter"><a href="https://twitter.com/share" class="twitter-share-button" data-text="Mobile Meetup — мобильная конференция в Воронеже!" data-count="horizontal" data-via="touchinstinct" data-related="DataArt_Enjoy">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script></div>
+    <div class="facebook"><div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) {return;}
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <div class="fb-like" data-href="http://mmeetup.ru" data-send="true" data-layout="button_count" data-width="150" data-show-faces="true"></div></div>
+    <div class="vkontakte">
+    <script type="text/javascript">
+      VK.init({apiId: API_ID, onlyWidgets: true});
+    </script>
+
+    <!-- Put this div tag to the place, where the Like block will be -->
+    <div id="vk_like"></div>
+    <script type="text/javascript">
+    VK.Widgets.Like("vk_like", {type: "button"});
+    </script></div>
+</div>
+
+
+</div>
+{% endblock %}
+
+{% block footer %}
+<div class="partners">
+{% get_partners %}
+<h2>Инфоспонсоры</h2>
+<ul>
+
+{% for partner in partners %}
+{% thumbnail partner.logo '150x50' as logo %}
+<li><a href="{{ partner.link }}"><img src="{{ logo.url }}"></a></li>
+{% endthumbnail %}
+{% endfor %}
+
+    {% for partner in partners %}
+    {% thumbnail partner.logo '150x50' as logo %}
+    <li><a href="{{ partner.link }}"><img src="{{ logo.url }}"></a></li>
+    {% endthumbnail %}
+    {% endfor %}
+
+</div>
+
+{% endblock %}

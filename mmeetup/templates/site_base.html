@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load menu_tags %}
+{% load media %}
+{% load email %}
+
+{% block title %}Mobile Meetup — мобильная конференция в Воронеже{% endblock %}
+
+{% block bodyclass %}{{ menu_item.menu_item.named_url }}{% endblock %}
+
+{% block body %}
+<div class="header">
+    <div class="info">
+        <div class="date">26 ноября</div>
+        <div class="place">Воронеж, <a href="http://maps.yandex.ru/-/CBquQEpi">ул. Дружинников, 8</a></div>
+    </div>
+
+    <h1><a href="/">Mobile Meetup: Воронеж<span class="tagline">конференция о мобильной разработке</span></a></h1>
+    <ul class="main_menu">{% display_menu menu %}</ul>
+</div>
+    <div class="wr">
+    <div class="organizers">
+    <h2>Организаторы</h2>
+    <a href="http://dataart.com"><img width=200 src="{% media 'img/dataart_logo.png' %}"></a>
+    <!--a href="http://touchinstinct.ru"><img width=200 src="{% media 'img/touchinstinct_logo.jpg' %}"></a-->
+    <a href="http://touchinstinct.ru"><img   src="{% media 'img/ti_logo2.png' %}"></a>
+    </div>
+
+    <div class="contacts">
+    <h2>Вопросы?</h2>
+    <span class="name">Елена Федорова</span>
+    <span class="email"><a href="{{ 'elena.fedorova@dataart.com'|email_encode }}">{{ 'elena.fedorova@dataart.com'|email_encode:0 }}</a></span>
+    <span class="phone">+7 473 251-31-58</span>
+    </div>
+
+    <div class="kot">
+    <div class="text">Вот она! Вооот она! Конференция моей мечты.</div>
+    <a href="http://ru.wikipedia.org/wiki/Котёнок_с_улицы_Лизюкова_(памятник)">
+        <img src="{% media 'img/kot_liz.png' %}"/>
+    </a>
+    </div>
+    <div class="content">
+    {% if menu_item %}
+    <h2>{{ menu_item.caption }}</h2>
+    {% endif %}
+    {% block content %}
+    {% endblock %}
+    </div>
+    {% block footer %}
+    {% endblock %}
+    </div>
+{% endblock %}
