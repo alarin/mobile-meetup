@@ -95,12 +95,6 @@
 {% endthumbnail %}
 {% endfor %}
 
-    {% for partner in partners %}
-    {% thumbnail partner.logo '150x50' as logo %}
-    <li><a href="{{ partner.link }}"><img src="{{ logo.url }}"></a></li>
-    {% endthumbnail %}
-    {% endfor %}
-
 </div>
 
 {% endblock %}

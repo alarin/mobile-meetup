@@ -104,6 +104,15 @@ h3 {
     margin: 1.5em 0 0.7em 0;
     font-family: Arial, sans-serif;
 }
+.right_column {
+    float: right;
+    width: 25%;
+    max-width: 20em;
+}
+.content {
+    float: left;
+    width: 70%;
+}
 .contacts, .organizers {
     float: right;
     clear: both;
@@ -155,7 +164,7 @@ h3 {
 }
 
 .content {
-    margin: 0 20em 0 30px;
+    margin: 0 1em 0 30px;
     position: relative;
 }
 
@@ -182,6 +191,9 @@ h3 {
         .agenda .brake .title {
             text-align: center;
         }
+    .agenda .speaker {
+        white-space: nowrap;
+    }
     .agenda .speaker .photo {
         vertical-align: middle;
         margin: 0 0.7em 0 0;
@@ -228,7 +240,7 @@ h3 {
 .social {
     overflow: hidden;
     margin: 1em auto 1em auto;
-    width: 15em;
+    width: 270px;
 }
     .social .facebook, .social .vkontakte, .social .twitter {
         float: left;
@@ -236,6 +248,7 @@ h3 {
 
 .partners {
     margin: 2em 0 0 30px;
+    clear: both;
 }
     .partners li {
         padding: 0.5em 0 1em 0;
